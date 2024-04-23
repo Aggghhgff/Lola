@@ -1,14 +1,8 @@
 const gameMods = [ 
     { name: '0.66 mod menu stumble guys', image: 'download (3).jpeg' },
-    { name: 'Mod 2', image: download (3).jpeg', downloadLink: 'https://example.com/mod2.zip' },
+    { name: 'Mod 2', image: 'download (3).jpeg', downloadLink: 'https://example.com/mod2.zip' },
     { name: 'Mod 3', image: 'https://raw.githubusercontent.com/Aggghhgff/Lola/main/download%20(3).jpeg', downloadLink: 'https://example.com/mod3.zip' },
-    
-
-
-
-   
-
-// Add more mods here
+    // Add more mods here
 ];
 
 const gameModsContainer = document.getElementById('gameMods');
@@ -35,10 +29,6 @@ searchInput.addEventListener('input', () => {
     const filteredMods = gameMods.filter(mod => mod.name.toLowerCase().includes(searchTerm));
     renderGameMods(filteredMods);
 });
-
-
-
-
 
 /* code of pop up st */
 
@@ -80,9 +70,6 @@ document.addEventListener("DOMContentLoaded", function() {
   changeBackground();
 });
 
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
   var chatIcon = document.getElementById("chatIcon");
   var chatGuide = document.getElementById("chatGuide");
@@ -91,7 +78,3 @@ document.addEventListener("DOMContentLoaded", function() {
     chatGuide.style.display = chatGuide.style.display === "block" ? "none" : "block";
   });
 });
-
-
-
-
