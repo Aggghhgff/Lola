@@ -1,5 +1,5 @@
 const gameMods = [ 
-    { name: '0.66 mod menu stumble guys', image: 'https://github.com/Aggghhgff/Lola/blob/main/download%20(3).jpeg', downloadLink: 'https://example.com/mod1.zip' },
+    { name: '0.66 mod menu stumble guys', image: 'https://www.google.com/imgres?q=stumble%20guys%20image&imgurl=https%3A%2F%2Fplay-lh.googleusercontent.com%2FOci7f4WR0JShbn-n5hnwubbXaMssleb2b1Dv7AMOzFFcgstIdC9kg-E3LHx3em8RCaLf&imgrefurl=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.kitkagames.fallbuddies%26hl%3Den_US&docid=JvS05nKW1no3_M&tbnid=qXeQlRLFXYt3rM&vet=12ahUKEwiFo_C5xdiFAxWWxTgGHd36CNsQM3oECGgQAA..i&w=512&h=512&hcb=2&ved=2ahUKEwiFo_C5xdiFAxWWxTgGHd36CNsQM3oECGgQAA' },
     { name: 'Mod 2', image: 'mod2.jpg', downloadLink: 'https://example.com/mod2.zip' },
     { name: 'Mod 3', image: 'mod3.jpg', downloadLink: 'https://example.com/mod3.zip' },
     // Add more mods here
