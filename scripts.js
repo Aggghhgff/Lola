@@ -1,6 +1,6 @@
 const gameMods = [ 
-    { name: '0.66 mod menu stumble guys', image: 'https://raw.githubusercontent.com/Aggghhgff/Lola/main/download%20(3).jpeg' },
-    { name: 'Mod 2', image: 'https://raw.githubusercontent.com/Aggghhgff/Lola/main/download%20(3).jpeg', downloadLink: 'https://example.com/mod2.zip' },
+    { name: '0.66 mod menu stumble guys', image: 'download (3).jpeg' },
+    { name: 'Mod 2', image: download (3).jpeg', downloadLink: 'https://example.com/mod2.zip' },
     { name: 'Mod 3', image: 'https://raw.githubusercontent.com/Aggghhgff/Lola/main/download%20(3).jpeg', downloadLink: 'https://example.com/mod3.zip' },
     // Add more mods here
 ];
