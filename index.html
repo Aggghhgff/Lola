@@ -212,4 +212,77 @@
 
         function renderGameMods(mods) {
             gameModsContainer.innerHTML = '';
-            mods.forEach(mod
+            mods.forEach(mod => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.innerHTML = `
+                    <img src="${mod.image}" alt="${mod.name}">
+                    <h2>${mod.name}</h2>
+                    <button onclick="window.location.href='${mod.downloadLink}'">Download</button>
+                `;
+                gameModsContainer.appendChild(card);
+            });
+        }
+
+        renderGameMods(gameMods);
+
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            const filteredMods = gameMods.filter(mod => mod.name.toLowerCase().includes(searchTerm));
+            renderGameMods(filteredMods);
+        });
+
+        /* code of pop up st */
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                document.getElementById("popup").style.display = "block";
+            }, 600); // 2 minutes in milliseconds
+        });
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        /* verify code animation */
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector('.verification-animation').style.visibility = 'visible';
+        });
+
+        /* st of background animation*/
+        document.addEventListener("DOMContentLoaded", function() {
+            var chatIcon = document.getElementById("chatIcon");
+            var chatGuide = document.getElementById("chatGuide");
+
+            chatIcon.addEventListener("click", function() {
+                chatGuide.style.display = chatGuide.style.display === "block" ? "none" : "block";
+            });
+        });
+    </script>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Subscribe to my channel or join Discord!</h2>
+            <p>Subscribe to my channel or join our Discord community to stay updated with the latest content.</p>
+        </div>
+    </div>
+
+    <div class="verification-animation">
+        <div class="verify-icon"></div>
+    </div>
+
+    <audio autoplay loop>
+        <source src="Legends-Never-Die.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="chatIcon" class="chat-icon">
+        <img src="https://raw.githubusercontent.com/Aggghhgff/Lola/main/998bc565-31b5-4d9f-b065-7850967d1144.png" alt="Chat Icon" width="50" height="50">
+    </div>
+    <div id="chatGuide" class="chat-guide">
+        <div class="chat-content">
+            <h3>CLI</h3>
+        </div>
+    </div>
+</body>
+</html>
