@@ -1,3 +1,4 @@
+<script>
 const gameMods = [ 
     { name: '0.66 mod menu stumble guys', image: 'download (3).jpeg' },
     { name: 'Mod 2', image: 'download (3).jpeg', downloadLink: 'https://example.com/mod2.zip' },
@@ -78,3 +79,4 @@ document.addEventListener("DOMContentLoaded", function() {
     chatGuide.style.display = chatGuide.style.display === "block" ? "none" : "block";
   });
 });
+</script>
