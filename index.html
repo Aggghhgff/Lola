@@ -104,32 +104,8 @@
         }
 
         .verification-animation {
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #3498db;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            z-index: 9999;
-            visibility: hidden;
-            animation: fadeIn 0.5s ease-in-out 3s forwards;
+            display: none;
         }
-
-        .verify-icon {
-            width: 20px;
-            height: 20px;
-            background-color: #fff;
-            border-radius: 50%;
-        }
-
-        @keyframes fadeIn {
-            to {
-                visibility: visible;
-                opacity: 0;
-            }
-        } 
 
         .chat-icon {
             position: fixed;
@@ -232,32 +208,18 @@
             renderGameMods(filteredMods);
         });
 
-        /* code of pop up st */
-        document.addEventListener("DOMContentLoaded", function() {
-            setTimeout(function() {
-                document.getElementById("popup").style.display = "block";
-            }, 600); // 2 minutes in milliseconds
-        });
-
-        function closePopup() {
-            document.getElementById("popup").style.display = "none";
-        }
-
-        /* verify code animation */
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelector('.verification-animation').style.visibility = 'visible';
-        });
-
-        /* st of background animation*/
-        document.addEventListener("DOMContentLoaded", function() {
-            var chatIcon = document.getElementById("chatIcon");
-            var chatGuide = document.getElementById("chatGuide");
-
-            chatIcon.addEventListener("click", function() {
-                chatGuide.style.display = chatGuide.style.display === "block" ? "none" : "block";
-            });
-        });
+        // Show content after 4 seconds
+        setTimeout(() => {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementsByTagName('header')[0].style.display = 'block';
+            document.getElementById('gameMods').style.display = 'block';
+        }, 4000);
     </script>
+
+    <div id="loading" style="text-align: center; padding: 50px;">
+        <!-- Loading animation goes here -->
+        <div class="spinner"></div>
+    </div>
 
     <div id="popup" class="popup">
         <div class="popup-content">
@@ -267,15 +229,6 @@
         </div>
     </div>
 
-    <div class="verification-animation">
-        <div class="verify-icon"></div>
-    </div>
-
-    <audio autoplay loop>
-        <source src="Legends-Never-Die.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-
     <div id="chatIcon" class="chat-icon">
         <img src="https://raw.githubusercontent.com/Aggghhgff/Lola/main/998bc565-31b5-4d9f-b065-7850967d1144.png" alt="Chat Icon" width="50" height="50">
     </div>
@@ -284,47 +237,5 @@
             <h3>CLI</h3>
         </div>
     </div>
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
