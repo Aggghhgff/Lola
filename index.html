@@ -174,52 +174,6 @@
         <input type="text" id="searchInput" placeholder="Search...">
     </header>
     <main id="gameMods"></main>
-    <script>
-        // JavaScript code here
-        const gameMods = [ 
-            { name: '0.66 mod menu stumble guys', image: 'download (3).jpeg' },
-            { name: 'Mod 2', image: 'download (3).jpeg', downloadLink: 'https://example.com/mod2.zip' },
-            { name: 'Mod 3', image: 'https://raw.githubusercontent.com/Aggghhgff/Lola/main/download%20(3).jpeg', downloadLink: 'https://example.com/mod3.zip' },
-            // Add more mods here
-        ];
-
-        const gameModsContainer = document.getElementById('gameMods');
-        const searchInput = document.getElementById('searchInput');
-
-        function renderGameMods(mods) {
-            gameModsContainer.innerHTML = '';
-            mods.forEach(mod => {
-                const card = document.createElement('div');
-                card.classList.add('card');
-                card.innerHTML = `
-                    <img src="${mod.image}" alt="${mod.name}">
-                    <h2>${mod.name}</h2>
-                    <button onclick="window.location.href='${mod.downloadLink}'">Download</button>
-                `;
-                gameModsContainer.appendChild(card);
-            });
-        }
-
-        renderGameMods(gameMods);
-
-        searchInput.addEventListener('input', () => {
-            const searchTerm = searchInput.value.toLowerCase();
-            const filteredMods = gameMods.filter(mod => mod.name.toLowerCase().includes(searchTerm));
-            renderGameMods(filteredMods);
-        });
-
-        // Show content after 4 seconds
-        setTimeout(() => {
-            document.getElementById('loading').style.display = 'none';
-            document.getElementsByTagName('header')[0].style.display = 'block';
-            document.getElementById('gameMods').style.display = 'block';
-        }, 4000);
-    </script>
-
-    <div id="loading" style="text-align: center; padding: 50px;">
-        <!-- Loading animation goes here -->
-        <div class="spinner"></div>
-    </div>
 
     <div id="popup" class="popup">
         <div class="popup-content">
@@ -234,7 +188,7 @@
     </div>
     <div id="chatGuide" class="chat-guide">
         <div class="chat-content">
-            
+            <h3>CLI</h3>
         </div>
     </div>
 </body>
