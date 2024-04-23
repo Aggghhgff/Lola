@@ -4,7 +4,180 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Mods</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        #searchInput {
+            padding: 10px;
+            width: 300px;
+            margin-top: 10px;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+        }
+
+        .card img {
+            max-width: 100%;
+        }
+
+        .card button {
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        .card button:hover {
+            background-color: #555;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #DF1C1C;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+        }
+
+        .popup-content {
+            text-align: center;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .verification-animation {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            z-index: 9999;
+            visibility: hidden;
+            animation: fadeIn 0.5s ease-in-out 3s forwards;
+        }
+
+        .verify-icon {
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+
+        @keyframes fadeIn {
+            to {
+                visibility: visible;
+                opacity: 0;
+            }
+        } 
+
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        .chat-guide {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            z-index: 9999;
+        }
+
+        .chat-content {
+            padding: 20px;
+            color: black;
+            color: transparent;
+            animation: rainbow 5s infinite; /* Adjust animation duration as needed */
+        }
+
+        @keyframes rainbow {
+            0% { 
+                -webkit-text-stroke: 2px red; /* Initial color */
+                color: transparent;
+            }
+            20% { 
+                -webkit-text-stroke: 2px orange; /* Intermediate colors */
+                color: transparent;
+            }
+            40% {
+                -webkit-text-stroke: 2px yellow;
+                color: transparent;
+            }
+
+            50% {
+                -webkit-text-stroke: 2px #6C01E9;
+                color: transparent;
+            }
+
+            60% {
+                -webkit-text-stroke: 2px green;
+                color: transparent;
+            }
+            80% {
+                -webkit-text-stroke: 2px blue;
+                color: transparent;
+            }
+            100% {
+                -webkit-text-stroke: 2px violet; /* Final color */
+                color: transparent;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -12,7 +185,86 @@
         <input type="text" id="searchInput" placeholder="Search...">
     </header>
     <main id="gameMods"></main>
-    <script src="scripts.js"></script>
+    <script>
+        // JavaScript code here
+        const gameMods = [ 
+            { name: '0.66 mod menu stumble guys', image: 'download (3).jpeg' },
+            { name: 'Mod 2', image: 'download (3).jpeg', downloadLink: 'https://example.com/mod2.zip' },
+            { name: 'Mod 3', image: 'https://raw.githubusercontent.com/Aggghhgff/Lola/main/download%20(3).jpeg', downloadLink: 'https://example.com/mod3.zip' },
+            // Add more mods here
+        ];
+
+        const gameModsContainer = document.getElementById('gameMods');
+        const searchInput = document.getElementById('searchInput');
+
+        function renderGameMods(mods) {
+            gameModsContainer.innerHTML = '';
+            mods.forEach(mod => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.innerHTML = `
+                    <img src="${mod.image}" alt="${mod.name}">
+                    <h2>${mod.name}</h2>
+                    <button onclick="window.location.href='${mod.downloadLink}'">Download</button>
+                `;
+                gameModsContainer.appendChild(card);
+            });
+        }
+
+        renderGameMods(gameMods);
+
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            const filteredMods = gameMods.filter(mod => mod.name.toLowerCase().includes(searchTerm));
+            renderGameMods(filteredMods);
+        });
+
+        /* code of pop up st */
+
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                document.getElementById("popup").style.display = "block";
+            }, 600); // 2 minutes in milliseconds
+        });
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        /* end of pop up code */
+
+        /* verify code animation */
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector('.verification-animation').style.visibility = 'visible';
+        });
+
+        /* end of verify code */
+
+        /* st of background animation*/
+        document.addEventListener("DOMContentLoaded", function() {
+            const colors = ['#FF5733', '#33FF57', '#5733FF']; // Add your desired colors here
+            const background = document.querySelector('.background');
+
+            let currentIndex = 0;
+
+            function changeBackground() {
+                background.style.backgroundColor = colors[currentIndex];
+                currentIndex = (currentIndex + 1) % colors.length;
+                setTimeout(changeBackground, 2000); // Change color every 2 seconds
+            }
+
+            changeBackground();
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var chatIcon = document.getElementById("chatIcon");
+            var chatGuide = document.getElementById("chatGuide");
+
+            chatIcon.addEventListener("click", function() {
+                chatGuide.style.display = chatGuide.style.display === "block" ? "none" : "block";
+            });
+        });
+    </script>
 
     <div id="popup" class="popup">
         <div class="popup-content">
@@ -39,8 +291,5 @@
             <h3>CLI</h3>
         </div>
     </div>
-
-    <script src="scripts.js"></script>
-
 </body>
 </html>
