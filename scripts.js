@@ -1,5 +1,5 @@
 const gameMods = [ 
-    { name: '0.66 mod menu stumble guys', image: '/Images of website /download (3).jpeg', downloadLink: 'https://example.com/mod1.zip' },
+    { name: '0.66 mod menu stumble guys', image: 'https://github.com/Aggghhgff/Lola/blob/main/download%20(3).jpeg', downloadLink: 'https://example.com/mod1.zip' },
     { name: 'Mod 2', image: 'mod2.jpg', downloadLink: 'https://example.com/mod2.zip' },
     { name: 'Mod 3', image: 'mod3.jpg', downloadLink: 'https://example.com/mod3.zip' },
     // Add more mods here
