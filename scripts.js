@@ -5,7 +5,7 @@ const gameMods = [
     
 
 
-   { name: 'Mod 3', image: 'https://raw.githubusercontent.com/Aggghhgff/Lola/main/download%20(3).jpeg', downloadLink: 'https://example.com/mod3.zip' },
+   { name: 'Mod 4', image: 'https://raw.githubusercontent.com/Aggghhgff/Lola/main/download%20(3).jpeg', downloadLink: 'https://example.com/mod3.zip' },
     
 
 
